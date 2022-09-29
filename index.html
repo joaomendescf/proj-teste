@@ -6,54 +6,131 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
     <style>
-        #cabecalho,
-        #corpo,
-        #rodape {
-            width: 100%;
+        * {
+            box-sizing: border-box;
+        }
+
+        body,
+        html {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        header {
+            background-color: #666;
+            padding: 30px;
             text-align: center;
+            font-size: 35px;
+            color: white;
         }
 
-        main>h2 {
-            color: blue;
+        nav {
+            float: left;
+            width: 30%;
+            background-color: #ccc;
+            padding: 20px
         }
 
-        #texto {
-            max-width: 400px;
+        nav ul {
+            list-style-type: none;
+            padding: 0px;
         }
+
+        article {
+            float: right;
+            padding: 20px;
+            width: 70%;
+            background-color: #f1f1f1;
+        }
+
+        section::after {
+            background: #ccc;
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        footer {
+            background-color: #777;
+            padding: 10px;
+            text-align: center;
+            color: white;
+        }
+
+        @media (max-width: 600px) {
+
+            nav,
+            article {
+                width: 100%;
+                height: auto;
+            }
     </style>
 </head>
 
 <body>
-    <header id="cabecalho">
-        <img src="img/cabecalho.png" alt="">
-    </header>
+    <header>Titulo da pagina</header>
 
-    <main id="corpo">
-        <p>
-            <img src="img/imagem.png" alt="">
-        </p>
-        <p id="texto">
-        <h2>
-            Inovação para transformar
-        </h2>
+    <section>
 
-        <p>
-            Além de comunicação, estratégia e planejamento, operamos todos os processos buscando pela excelência
-            operacional e otimização de recursos, seja por meio da inovação de nossa plataforma ou de parcerias
-            estratégicas.       
-        </p>
-        <p>
-            <img src="img/botao.png" alt="">
-        </p>
-    </main>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#contato">Contato</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+            </ul>
+        </nav>
 
-    <footer id="rodape">
-        <p>
-            Para mais informações acesse:
-            <a href="">vasto.com.br</a>
-        </p>
+        <article>
+            <h1>contato</h1>
+            <form action="" method="post">
+                <div>
+                    <label for="nome">Nome</label>
+                    <input type="text" name="nome" id="nome" placeholder="Digite o seu nome">
+                </div>
+                <div>
+                    <label for="email">E-mail</label>
+                    <input type="email" name="email" id="email" placeholder="Digite o seu e-mail">
+                </div>
+                <div>
+                    <label for="mensagem">Mensagem</label>
+                    <textarea name="mensagem" id="mensagem"></textarea>
+                </div>
+                <div>
+                    <label">Qual linguagem prefere?</label>
+                        <input type="radio" name="linguagens">HTML
+                        <input type="radio" name="linguagens">CSS
+                        <input type="radio" name="linguagens">JAVASCRIPT
+                </div>
+                <div>
+                    <label">Qual linguagem conhece?</label>
+                        <input type="checkbox" name="linguagens">HTML
+                        <input type="checkbox" name="linguagens">CSS
+                        <input type="checkbox" name="linguagens">JAVASCRIPT
+                </div>
+                <div>
+                    <label>Qual a linguagem favorita?</label>
+                    <select>
+                        <option value="JAVASCRIPT">JAVASCRIPT</option>
+                        <option value="CSS">CSS</option>
+                        <option value="HTML" selected>HTML</option>
+                    </select>
+                </div>
+
+            </form>
+        </article>
+
+    </section>
+
+    <footer>
+        <p>Desenvolvido</p>
     </footer>
+
 </body>
 
 </html>
